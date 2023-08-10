@@ -1,0 +1,119 @@
+\documentclass[11pt]{article}
+% Setup margins
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	top=30mm,
+	right=25mm,
+	bottom=25mm,
+	left=25mm
+	}
+% Use parskip to leave line between paragraphs as per style
+\usepackage{parskip}
+% Use fancyhdr package to allow for header style
+\usepackage{fancyhdr}
+% Standard packages for coloured text, postscript figures (MATLAB figure export) and nice-looking maths
+\usepackage{color}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{gensymb} %deg symbol
+\usepackage{comment} %for commenting out paras 
+% Setup caption style
+\usepackage[justification=centering]{caption}
+\usepackage{subcaption}
+% Reduce the itemize item separation
+\usepackage{enumitem}
+\setitemize{noitemsep}
+% Make ``Abstract'' all capitals for style
+\renewcommand{\abstractname}{ABSTRACT}
+\usepackage{pifont}
+\usepackage{cite}
+\usepackage{siunitx}
+\usepackage[explicit]{titlesec}
+\usepackage{multirow}
+\usepackage{wrapfig}%wrap figure document
+% Set title and author of document
+\usepackage{url}
+%% HEADER STYLES
+\title{Effects of root boundary conditions on the bending stiffness of a STEM deployable boom}
+\author{Shrey Bhardwaj}
+\makeatletter
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\small \@author}
+\fancyfoot[C]{\thepage}
+\makeatother
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\titleformat{\section}
+{\bfseries}{\thesection}{1em}{\centering \MakeUppercase{#1}}
+\usepackage{lmodern}
+\begin{document}
+
+\thispagestyle{plain}
+
+\vspace*{-2cm}
+
+\begin{minipage}[t]{7cm}
+\flushleft
+\includegraphics{images/bristolLogo.png}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{7cm}
+\flushright
+\vspace*{-1cm}
+Department of Aerospace Engineering\\
+AENGM0032 Research Project\\
+2018-2019
+\end{minipage}
+
+\vspace{11pt}
+\hrule
+
+\makeatletter
+\begin{center}
+	\vspace{11pt}
+	\MakeUppercase{\textbf{\@title}}
+
+	\@author
+
+	Department of Aerospace Engineering, University of Bristol,
+	Queen's Building, University Walk, Bristol, BS8 1TR, UK
+\end{center}
+\makeatother
+
+\begin{abstract}{\it
+This project aims to find the change in bending stiffness and maximum reaction moment with changing root clamp width of a Storable Tubular Extendable Member (STEM) boom. Accurate analysis of these properties enables designers to avoid buckling of booms in load bearing applications such as the DeOrbitSail mission. The STEM boom is modelled in ABAQUS and the changing widths are modelled as boundary conditions acting on a fixed number of nodes along it's length, at the root. Varying clamp width results in a first order equation with bending stiffness and second order equation with ploy length. 
+}\end{abstract}
+
+\begin{center}
+	\textbf{Keywords}: FEA, ABAQUS, STEM, Ploy Length, Bending stiffness
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\tableofcontents
+	\thispagestyle{empty}
+	\newpage
+	\listoffigures
+    \input{symbols}
+    \newpage
+	\setcounter{page}{1}    
+    \input{introduction}
+    \input{litreview}
+    \input{method}
+    \newpage
+    \input{results}
+    %\input{discussion}
+    \input{conclusion}
+    
+    \small{
+	\bibliographystyle{ieeetr}
+	\bibliography{fyp.bib}
+	}
+	\input{appendices}
+	
+\end{document}
+
+
